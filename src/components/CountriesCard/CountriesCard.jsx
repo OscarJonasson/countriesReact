@@ -11,7 +11,9 @@ const CountriesCard = ({ country }) => {
   // fix This
   const populationRounding = () => {
     const population = (country?.population / 1000000).toPrecision(2);
-    return population >= 1 ? population + 'M' : Math.round(population);
+    return population >= 1
+      ? population + 'M'
+      : Math.round(population * 1000) + 'K';
   };
 
   return (

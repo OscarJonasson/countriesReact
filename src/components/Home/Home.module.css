@@ -1,0 +1,24 @@
+.welcome {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  color: white;
+}
+
+.countriesLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  color: white;
+  height: 3rem;
+  width: 10rem;
+  background-color: rgba(255, 0, 0, 0.301);
+  border-radius: 5px;
+}
+
+.countriesLink:hover {
+  filter: drop-shadow(0 0 12px crimson);
+}

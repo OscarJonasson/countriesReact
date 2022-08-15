@@ -6,6 +6,5 @@
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-  background-color: aquamarine;
   margin: 2rem;
 }
