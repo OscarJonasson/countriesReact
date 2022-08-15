@@ -1,0 +1,18 @@
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 12px;
+  box-shadow: 1px 1px 2px black;
+  height: 10rem;
+  width: 20rem;
+  background-color: rgb(115, 130, 130);
+}
+
+.card__title {
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  flex-flow: row nowrap;
+}
