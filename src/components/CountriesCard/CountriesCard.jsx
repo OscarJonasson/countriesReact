@@ -7,11 +7,19 @@ const CountriesCard = ({ country }) => {
   // console.log('languages', info?.languages);
   // console.log(Object.keys(info.languages));
   // <span key={i}>{(i ? ', ' : '') + { language }}</span>
+
+  // fix This
+  const populationRounding = () => {
+    const population = (country?.population / 1000000).toPrecision(2);
+    return population >= 1 ? population + 'M' : Math.round(population);
+  };
+
   return (
-    // xxxxx{info.name.common}
     <div className={classes.card}>
-      <div className={classes.card__title}>{country?.name?.common}</div>
-      <div className={classes.card__capital}>{country?.capital[0]}</div>
+      <div className={classes.card__title}>
+        <h2>{country?.name?.common}</h2>
+        <h4>{country?.name?.official}</h4>
+      </div>
       <div className={classes.info}>
         <div>
           <h3>Languages</h3>
@@ -27,9 +35,10 @@ const CountriesCard = ({ country }) => {
         </div>
         <div>
           <h3>Population</h3>
-          {country?.population}
+          {populationRounding()}
         </div>
       </div>
+      <img className={classes.card__flag} src={country?.flags.svg} alt="Flag" />
     </div>
   );
 };

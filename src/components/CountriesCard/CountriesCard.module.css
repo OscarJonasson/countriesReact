@@ -1,18 +1,36 @@
 .card {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
+  justify-content: space-around;
   border-radius: 12px;
   box-shadow: 1px 1px 2px black;
   height: 10rem;
   width: 20rem;
   background-color: rgb(115, 130, 130);
+  margin: 0.5rem;
+  padding: 0.3rem;
 }
 
 .card__title {
   text-align: center;
 }
 
+.card__flag {
+  position: absolute;
+  height: 40px;
+  border-radius: 3px;
+  /* object-fit: cover; */
+  top: 1px;
+  right: -10px;
+  box-shadow: 1px 1px 2px black;
+}
+
 .info {
   display: flex;
   flex-flow: row nowrap;
 }
+
+/* .info__block {
+  flex-flow: column nowrap;
+} */

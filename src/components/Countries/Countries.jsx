@@ -6,24 +6,29 @@ import classes from './Countries.module.css';
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(`https://restcountries.com/v3.1/name/finland`)
+      .get(`https://restcountries.com/v3.1/all`)
       .catch((err) => console.log(err))
       .then((res) => setCountries(res.data));
+    setIsLoading(false);
   }, []);
-  console.log('Countries', countries);
-  //  gets country name  console.log(countries[0]?.name.common);
+
   return (
-    <section className={classes.countries}>
-      {/* {countries.map((country) => {
-        <CountriesCard />;
-      })} */}
-      <CountriesCard country={countries[0]} />
-      <CountriesCard />
-      <CountriesCard />
-    </section>
+    <>
+      <input className={classes.search}></input>
+      {isLoading ? (
+        <h1 className={classes.loading}>Loading countries...</h1>
+      ) : (
+        <section className={classes.countries}>
+          {countries.map((country, i) => (
+            <CountriesCard key={country?.name?.common} country={country} />
+          ))}
+        </section>
+      )}
+    </>
   );
 };
 
