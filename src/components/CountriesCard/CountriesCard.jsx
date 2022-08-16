@@ -26,13 +26,13 @@ const CountriesCard = ({ country }) => {
         <div>
           <h3>Languages</h3>
           {Object.values(country?.languages || {}).map((language, i) => (
-            <span key={i}>{language}</span>
+            <span key={i}>{(i ? ', ' : '') + language}</span>
           ))}
         </div>
         <div>
           <h3>Currency</h3>
           {Object.values(country?.currencies || {}).map((currency, i) => (
-            <span key={i}>{currency.name}</span>
+            <span key={i}>{(i ? ', ' : '') + currency.name}</span>
           ))}
         </div>
         <div>
