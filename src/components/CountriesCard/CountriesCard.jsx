@@ -23,19 +23,19 @@ const CountriesCard = ({ country }) => {
         <h4>{country?.name?.official}</h4>
       </div>
       <div className={classes.info}>
-        <div>
+        <div className={classes.info__divider}>
           <h3>Languages</h3>
           {Object.values(country?.languages || {}).map((language, i) => (
             <span key={i}>{(i ? ', ' : '') + language}</span>
           ))}
         </div>
-        <div>
+        <div className={classes.info__divider}>
           <h3>Currency</h3>
           {Object.values(country?.currencies || {}).map((currency, i) => (
             <span key={i}>{(i ? ', ' : '') + currency.name}</span>
           ))}
         </div>
-        <div>
+        <div className={classes.info__divider}>
           <h3>Population</h3>
           {populationRounding()}
         </div>

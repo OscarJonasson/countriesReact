@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+:root {
+  --main-font: 'Source Sans Pro', sans-serif;
 }
 
 body {
@@ -9,4 +14,5 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: white;
+  font-family: var(--main-font);
 }

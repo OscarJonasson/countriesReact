@@ -7,7 +7,7 @@
   box-shadow: 1px 1px 2px black;
   height: 12rem;
   width: 25rem;
-  background-color: rgb(115, 130, 130);
+  background-color: rgba(115, 130, 130, 0.72);
   margin: 0.5rem;
   padding: 0.3rem;
 }
@@ -21,7 +21,7 @@
   height: 40px;
   border-radius: 3px;
   /* object-fit: cover; */
-  top: 1px;
+  top: -5px;
   right: -10px;
   box-shadow: 1px 1px 2px black;
 }
@@ -29,9 +29,12 @@
 .info {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  font-weight: 200;
 }
 
-/* .info__block {
-  flex-flow: column nowrap;
-} */
+.info__divider {
+  width: 25%;
+  max-height: 60px;
+  overflow: scroll;
+}
