@@ -7,6 +7,7 @@ import classes from './Countries.module.css';
 const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     axios
@@ -16,16 +17,29 @@ const Countries = () => {
     setIsLoading(false);
   }, []);
 
+  const search = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <>
-      <input className={classes.search}></input>
+      <input className={classes.search} onChange={search}></input>
       {isLoading ? (
         <h1 className={classes.loading}>Loading countries...</h1>
       ) : (
         <section className={classes.countries}>
-          {countries.map((country, i) => (
-            <CountriesCard key={country?.name?.common} country={country} />
-          ))}
+          {countries
+            .filter((country) => {
+              if (searchTerm === '') {
+                return country;
+              }
+              return country?.name?.common
+                .toLowerCase()
+                .includes(searchTerm.toLowerCase());
+            })
+            .map((country, i) => (
+              <CountriesCard key={country?.name?.common} country={country} />
+            ))}
         </section>
       )}
     </>
