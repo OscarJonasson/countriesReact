@@ -25,6 +25,30 @@
   box-shadow: 1px 1px 2px black;
 }
 
+.card__seeMore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__seeMore a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  height: 1.5rem;
+  width: 7rem;
+  background-color: rgba(255, 0, 0, 0.301);
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
+
+.card__seeMore a:hover {
+  filter: drop-shadow(0 0 12px crimson);
+}
+
 .info {
   display: flex;
   flex-flow: row nowrap;

@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './CountriesCard.module.css';
+import { Link } from 'react-router-dom';
 
 const CountriesCard = ({ country }) => {
   // console.log('info', info);
@@ -21,6 +22,11 @@ const CountriesCard = ({ country }) => {
       <div className={classes.card__title}>
         <h2>{country?.name?.common}</h2>
         <h4>{country?.name?.official}</h4>
+      </div>
+      <div className={classes.card__seeMore}>
+        <Link to={`${country?.name?.common}`.toLowerCase()} state={country}>
+          See More
+        </Link>
       </div>
       <div className={classes.info}>
         <div className={classes.info__divider}>
