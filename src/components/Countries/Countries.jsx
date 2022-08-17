@@ -22,12 +22,17 @@ const Countries = () => {
   };
 
   return (
-    <>
-      <input className={classes.search} onChange={search}></input>
+    <section className={classes.container}>
+      <h2>Search for a country</h2>
+      <input
+        className={classes.search}
+        onChange={search}
+        placeholder="Insert a country..."
+      ></input>
       {isLoading ? (
         <h1 className={classes.loading}>Loading countries...</h1>
       ) : (
-        <section className={classes.countries}>
+        <div className={classes.countries}>
           {countries
             .filter((country) => {
               if (searchTerm === '') {
@@ -40,9 +45,9 @@ const Countries = () => {
             .map((country, i) => (
               <CountriesCard key={country?.name?.common} country={country} />
             ))}
-        </section>
+        </div>
       )}
-    </>
+    </section>
   );
 };
 
