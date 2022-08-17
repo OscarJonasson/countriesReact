@@ -1,0 +1,11 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(115, 130, 130, 0.72);
+  width: 95vw;
+}
+
+.card__flag {
+  height: 10rem;
+}

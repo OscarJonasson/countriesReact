@@ -6,13 +6,15 @@ const SingleCountry = () => {
   const location = useLocation();
   const country = location.state;
   console.log(country);
+
   return (
-    <section>
-      <div className={classes.card}>
-        <div className={classes.card__flag}>
-          <img src={country.flags.svg} alt={`Flag of ${country.name.common}`} />
-        </div>
-      </div>
+    <section className={classes.card}>
+      <img
+        className={classes.card__flag}
+        src={country.flags.svg}
+        alt={`Flag of ${country.name.common}`}
+      />
+      <h1>{country.name.common}</h1>
     </section>
   );
 };
