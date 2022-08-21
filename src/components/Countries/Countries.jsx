@@ -1,6 +1,6 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
+
 import CountriesCard from '../CountriesCard/CountriesCard';
 import classes from './Countries.module.css';
 
@@ -9,6 +9,13 @@ const Countries = ({ isLoading, countries }) => {
 
   const search = (e) => {
     setSearchTerm(e.target.value);
+  };
+
+  const backToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
@@ -37,6 +44,9 @@ const Countries = ({ isLoading, countries }) => {
             ))}
         </div>
       )}
+      <button className={classes.backToTop} onClick={backToTop}>
+        TOP
+      </button>
     </section>
   );
 };

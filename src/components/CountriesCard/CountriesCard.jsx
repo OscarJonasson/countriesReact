@@ -3,13 +3,6 @@ import classes from './CountriesCard.module.css';
 import { Link } from 'react-router-dom';
 
 const CountriesCard = ({ country }) => {
-  // console.log('info', info);
-
-  // console.log('languages', info?.languages);
-  // console.log(Object.keys(info.languages));
-  // <span key={i}>{(i ? ', ' : '') + { language }}</span>
-
-  // fix This
   const populationRounding = () => {
     const population = (country?.population / 1000000).toPrecision(2);
     return population >= 1

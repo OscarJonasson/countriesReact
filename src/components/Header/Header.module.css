@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+header a {
+  color: white;
+  font-size: 2rem;
+}
+
+header a:visited {
+  color: rgb(255, 255, 255);
+}
