@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column;
-  margin: 2rem 0s;
+  flex-flow: column wrap;
+  margin: 9rem 0rem;
+  height: 100vh;
 }
 .card {
   display: flex;

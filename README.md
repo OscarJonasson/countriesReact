@@ -1,8 +1,10 @@
 # Simple countries APP
 
-Countries app made in react using:
+Countries app made in react.
+Using bootstrap.
 
 ## API
 
 https://restcountries.com
+
 https://openweathermap.org/

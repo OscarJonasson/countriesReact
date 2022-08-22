@@ -1,4 +1,4 @@
-header {
+/* header {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11,4 +11,4 @@ header a {
 
 header a:visited {
   color: rgb(255, 255, 255);
-}
+} */

@@ -14,5 +14,5 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: white;
-  font-family: var(--main-font);
+  font-family: var(--main-font) !important;
 }

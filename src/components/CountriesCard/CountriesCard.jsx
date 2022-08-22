@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from './CountriesCard.module.css';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const CountriesCard = ({ country }) => {
   const populationRounding = () => {
@@ -11,36 +13,76 @@ const CountriesCard = ({ country }) => {
   };
 
   return (
-    <div className={classes.card}>
-      <div className={classes.card__title}>
-        <h2>{country?.name?.common}</h2>
-        <h4>{country?.name?.official}</h4>
-      </div>
-      <div className={classes.card__seeMore}>
-        <Link to={`${country?.name?.common}`.toLowerCase()} state={country}>
-          See More
-        </Link>
-      </div>
-      <div className={classes.info}>
-        <div className={classes.info__divider}>
-          <h3>Languages</h3>
+    // <div className={classes.card}>
+    //   <div className={classes.card__title}>
+    //     <h2>{country?.name?.common}</h2>
+    //     <h4>{country?.name?.official}</h4>
+    //   </div>
+    //   <div className={classes.card__seeMore}>
+    //     <Link to={`${country?.name?.common}`.toLowerCase()} state={country}>
+    //       See More
+    //     </Link>
+    //   </div>
+    //   <div className={classes.info}>
+    //     <div className={classes.info__divider}>
+    //       <h3>Languages</h3>
+    // {Object.values(country?.languages || {}).map((language, i) => (
+    //   <span key={i}>{(i ? ', ' : '') + language}</span>
+    // ))}
+    //     </div>
+    //     <div className={classes.info__divider}>
+    //       <h3>Currency</h3>
+    //       {Object.values(country?.currencies || {}).map((currency, i) => (
+    //         <span key={i}>{(i ? ', ' : '') + currency.name}</span>
+    //       ))}
+    //     </div>
+    //     <div className={classes.info__divider}>
+    //       <h3>Population</h3>
+    //       {populationRounding()}
+    //     </div>
+    //   </div>
+    // <img className={classes.card__flag} src={country?.flags.svg} alt="Flag" />
+    // </div>
+    <Card
+      className={classes.strapcard}
+      border="danger"
+      style={{ width: '20rem' }}
+      bg="dark"
+    >
+      <Card.Header>{country?.name?.common}</Card.Header>
+      <Card.Body>
+        <Card.Title>Languages:</Card.Title>
+        {/* <Card.Text> */}
+        <h3>Languages:</h3>
+        <div className={classes.info}>
           {Object.values(country?.languages || {}).map((language, i) => (
             <span key={i}>{(i ? ', ' : '') + language}</span>
           ))}
         </div>
-        <div className={classes.info__divider}>
-          <h3>Currency</h3>
+        <h3>Currency:</h3>
+        <div className={classes.info}>
           {Object.values(country?.currencies || {}).map((currency, i) => (
             <span key={i}>{(i ? ', ' : '') + currency.name}</span>
           ))}
         </div>
-        <div className={classes.info__divider}>
-          <h3>Population</h3>
-          {populationRounding()}
-        </div>
-      </div>
-      <img className={classes.card__flag} src={country?.flags.svg} alt="Flag" />
-    </div>
+        <h3>Population</h3>
+        <div className={classes.info}>{populationRounding()}</div>
+
+        <Link
+          className={classes.info__seeMore}
+          to={`${country?.name?.common}`.toLowerCase()}
+          state={country}
+        >
+          <Button variant="info">See More</Button>
+        </Link>
+        {/* </Card.Text> */}
+        <img
+          className={classes.card__flag}
+          src={country?.flags.svg}
+          alt="Flag"
+        />
+      </Card.Body>
+    </Card>
   );
 };
 
