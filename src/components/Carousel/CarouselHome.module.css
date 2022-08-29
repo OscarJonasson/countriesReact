@@ -1,4 +1,9 @@
 .dimensions {
-  height: 20rem;
-  width: 30rem;
+  margin: 2rem;
+  max-height: 30rem;
+  max-width: 25rem;
+}
+
+.dimensions img {
+  border-radius: 3px;
 }

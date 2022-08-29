@@ -5,9 +5,9 @@ import classes from './CarouselHome.module.css';
 const CarouselHome = ({ countries }) => {
   // Make this nice
   const winners = Array.of(
-    Math.ceil(Math.random() * 250),
-    Math.ceil(Math.random() * 250),
-    Math.ceil(Math.random() * 250)
+    Math.ceil(Math.random() * 249),
+    Math.ceil(Math.random() * 249),
+    Math.ceil(Math.random() * 249)
   );
 
   // console.log(winners);
@@ -21,7 +21,7 @@ const CarouselHome = ({ countries }) => {
         // console.log(countries[winner]?.flags?.svg);
         <Carousel.Item>
           <img
-            className="d-block w-100 align-middle"
+            className="d-block w-100"
             src={`${countries[winner]?.flags?.svg}`}
             // src="holder.js/800x400?text=First slide&bg=373940"
             alt={`flag of ${countries[winner]?.name?.common}`}

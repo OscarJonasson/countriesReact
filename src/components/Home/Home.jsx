@@ -10,6 +10,7 @@ const Home = ({ countries }) => {
       <Link className={classes.countriesLink} to="/countries">
         Check out
       </Link>
+      {/* Add loading from bootstrap and link to singlepage */}
       <CarouselHome countries={countries} />
     </section>
   );
