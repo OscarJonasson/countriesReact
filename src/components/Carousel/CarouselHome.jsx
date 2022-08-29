@@ -3,6 +3,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import classes from './CarouselHome.module.css';
 
 const CarouselHome = ({ countries }) => {
+  // Make this nice
   const winners = Array.of(
     Math.ceil(Math.random() * 250),
     Math.ceil(Math.random() * 250),
@@ -10,7 +11,7 @@ const CarouselHome = ({ countries }) => {
   );
 
   // console.log(winners);
-  console.log(countries);
+  // console.log(countries);
   // console.log(countries[winners[0]]?.flags.svg);
   // console.log(countries[0].area);
 
