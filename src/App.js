@@ -22,7 +22,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home countries={countries} />} />
           <Route
             path="countries"
             element={<Countries isLoading={isLoading} countries={countries} />}
