@@ -2,6 +2,8 @@
   margin: 2rem;
   max-height: 30rem;
   max-width: 25rem;
+  box-shadow: 0 0 10px 0.5px rgba(239, 242, 143, 0.485);
+  border-radius: 3px;
 }
 
 .dimensions img {
