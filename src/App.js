@@ -4,33 +4,24 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Countries from './components/Countries/Countries';
 import Home from './components/Home/Home';
 import SingleCountry from './components/SingleCountry/SingleCountry';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { initializeCountries } from './features/countries/countriesSlice';
 
 const App = () => {
-  const [countries, setCountries] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get(`https://restcountries.com/v3.1/all`)
-      .catch((err) => console.log(err))
-      .then((res) => setCountries(res.data));
-    setIsLoading(false);
-  }, []);
+    dispatch(initializeCountries());
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home countries={countries} />} />
-          <Route
-            path="countries"
-            element={<Countries isLoading={isLoading} countries={countries} />}
-          />
-          <Route
-            path="countries/:name"
-            element={<SingleCountry countries={countries} />}
-          />
+          <Route index element={<Home />} />
+          <Route path="countries" element={<Countries />} />
+          <Route path="countries/:name" element={<SingleCountry />} />
         </Route>
       </Routes>
     </BrowserRouter>

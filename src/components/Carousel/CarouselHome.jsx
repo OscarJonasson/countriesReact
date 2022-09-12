@@ -19,11 +19,11 @@ const CarouselHome = ({ countries }) => {
     <Carousel fade variant="dark" className={classes.dimensions}>
       {winners.map((winner) => (
         // console.log(countries[winner]?.flags?.svg);
-        <Carousel.Item>
+        <Carousel.Item key={countries[winner]?.name?.common}>
           <img
+            key={countries[winner]?.name?.common}
             className="d-block w-100"
             src={`${countries[winner]?.flags?.svg}`}
-            // src="holder.js/800x400?text=First slide&bg=373940"
             alt={`flag of ${countries[winner]?.name?.common}`}
           />
           <Carousel.Caption>

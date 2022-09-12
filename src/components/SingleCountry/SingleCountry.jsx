@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import classes from './SingleCountry.module.css';
 import axios from 'axios';
 import { useEffect } from 'react';
@@ -51,6 +51,7 @@ const SingleCountry = () => {
         <div className={classes.weather}>
           <Weather weather={weather} />
         </div>
+        <Link to="/countries">Back to countries</Link>
       </section>
     </div>
   );

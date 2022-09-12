@@ -1,16 +1,17 @@
 import React from 'react';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import CountriesCard from '../CountriesCard/CountriesCard';
 import classes from './Countries.module.css';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
+import { search } from '../../features/countries/countriesSlice';
 
-const Countries = ({ isLoading, countries }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const Countries = () => {
+  const dispatch = useDispatch();
 
-  const search = (e) => {
-    setSearchTerm(e.target.value);
-  };
+  const isLoading = useSelector((state) => state.countries.isLoading);
+  const searchTerm = useSelector((state) => state.countries.search);
+  const countries = useSelector((state) => state.countries.countries);
 
   const backToTop = () => {
     window.scrollTo({
@@ -27,7 +28,7 @@ const Countries = ({ isLoading, countries }) => {
         <Form.Control
           aria-label="Default"
           aria-describedby="inputGroup-sizing-default"
-          onChange={search}
+          onChange={(e) => dispatch(search(e.target.value))}
         />
       </InputGroup>
       {/* <input
