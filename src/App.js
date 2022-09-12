@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Countries from './components/Countries/Countries';
 import Home from './components/Home/Home';
 import SingleCountry from './components/SingleCountry/SingleCountry';
+import Favorites from './components/Favorites/Favorites';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { initializeCountries } from './features/countries/countriesSlice';
@@ -22,6 +23,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="countries" element={<Countries />} />
           <Route path="countries/:name" element={<SingleCountry />} />
+          <Route path="favorites" element={<Favorites />} />
         </Route>
       </Routes>
     </BrowserRouter>

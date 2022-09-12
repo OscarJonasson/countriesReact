@@ -10,16 +10,11 @@ const CarouselHome = ({ countries }) => {
     Math.ceil(Math.random() * 249)
   );
 
-  // console.log(winners);
-  // console.log(countries);
-  // console.log(countries[winners[0]]?.flags.svg);
-  // console.log(countries[0].area);
-
   return (
     <Carousel fade variant="dark" className={classes.dimensions}>
       {winners.map((winner) => (
         // console.log(countries[winner]?.flags?.svg);
-        <Carousel.Item key={countries[winner]?.name?.common}>
+        <Carousel.Item key={winner}>
           <img
             key={countries[winner]?.name?.common}
             className="d-block w-100"

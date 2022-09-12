@@ -3,8 +3,16 @@ import classes from './CountriesCard.module.css';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addFavorite,
+  removeFavorite,
+} from '../../features/countries/cartSlice';
 
 const CountriesCard = ({ country }) => {
+  const dispatch = useDispatch();
+  const favorites = useSelector((state) => state.cart);
+
   const populationRounding = () => {
     const population = (country?.population / 1000000).toPrecision(2);
     return population >= 1
@@ -13,36 +21,6 @@ const CountriesCard = ({ country }) => {
   };
 
   return (
-    // <div className={classes.card}>
-    //   <div className={classes.card__title}>
-    //     <h2>{country?.name?.common}</h2>
-    //     <h4>{country?.name?.official}</h4>
-    //   </div>
-    //   <div className={classes.card__seeMore}>
-    //     <Link to={`${country?.name?.common}`.toLowerCase()} state={country}>
-    //       See More
-    //     </Link>
-    //   </div>
-    //   <div className={classes.info}>
-    //     <div className={classes.info__divider}>
-    //       <h3>Languages</h3>
-    // {Object.values(country?.languages || {}).map((language, i) => (
-    //   <span key={i}>{(i ? ', ' : '') + language}</span>
-    // ))}
-    //     </div>
-    //     <div className={classes.info__divider}>
-    //       <h3>Currency</h3>
-    //       {Object.values(country?.currencies || {}).map((currency, i) => (
-    //         <span key={i}>{(i ? ', ' : '') + currency.name}</span>
-    //       ))}
-    //     </div>
-    //     <div className={classes.info__divider}>
-    //       <h3>Population</h3>
-    //       {populationRounding()}
-    //     </div>
-    //   </div>
-    // <img className={classes.card__flag} src={country?.flags.svg} alt="Flag" />
-    // </div>
     <Card
       className={classes.strapcard}
       border="danger"
@@ -51,6 +29,26 @@ const CountriesCard = ({ country }) => {
     >
       <Card.Header>{country?.name?.common}</Card.Header>
       <Card.Body>
+        {/* <input
+          type="checkbox"
+          id={country?.name?.common}
+          name={country?.name?.common}
+        />
+        <label for={country?.name?.common}>Favorite</label> */}
+        {favorites
+          .map((name) => name.name.common)
+          .includes(country.name.common) ? (
+          <button
+            type="button"
+            onClick={() => dispatch(removeFavorite(country))}
+          >
+            Remove
+          </button>
+        ) : (
+          <button type="button" onClick={() => dispatch(addFavorite(country))}>
+            Add
+          </button>
+        )}
         <Card.Title>Languages:</Card.Title>
         {/* <Card.Text> */}
         <h3>Languages:</h3>
