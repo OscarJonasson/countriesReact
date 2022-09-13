@@ -29,15 +29,9 @@ const CountriesCard = ({ country }) => {
     >
       <Card.Header>{country?.name?.common}</Card.Header>
       <Card.Body>
-        {/* <input
-          type="checkbox"
-          id={country?.name?.common}
-          name={country?.name?.common}
-        />
-        <label for={country?.name?.common}>Favorite</label> */}
         {favorites
           .map((name) => name.name.common)
-          .includes(country.name.common) ? (
+          .includes(country.name?.common) ? (
           <button
             type="button"
             onClick={() => dispatch(removeFavorite(country))}
@@ -76,7 +70,7 @@ const CountriesCard = ({ country }) => {
         {/* </Card.Text> */}
         <img
           className={classes.card__flag}
-          src={country?.flags.svg}
+          src={country?.flags?.svg}
           alt="Flag"
         />
       </Card.Body>

@@ -5,6 +5,7 @@ import classes from './Countries.module.css';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { search } from '../../features/countries/countriesSlice';
+import Search from '../Search/Search';
 
 const Countries = () => {
   const dispatch = useDispatch();
@@ -22,20 +23,7 @@ const Countries = () => {
 
   return (
     <section className={classes.container}>
-      <h2>Search for a country</h2>
-      <InputGroup className="mt-5 w-25">
-        <InputGroup.Text id="inputGroup-sizing-default">Search</InputGroup.Text>
-        <Form.Control
-          aria-label="Default"
-          aria-describedby="inputGroup-sizing-default"
-          onChange={(e) => dispatch(search(e.target.value))}
-        />
-      </InputGroup>
-      {/* <input
-        className={classes.search}
-        onChange={search}
-        placeholder="Insert a country..."
-      ></input> */}
+      <Search />
       {isLoading ? (
         <h1 className={classes.loading}>Loading countries...</h1>
       ) : (

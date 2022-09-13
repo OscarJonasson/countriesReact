@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useSelector } from 'react-redux';
+import { LinkContainer } from 'react-router-bootstrap';
 
 function Navigation() {
   const favorites = useSelector((state) => state.cart);
@@ -12,12 +13,18 @@ function Navigation() {
         <Container>
           <Navbar.Brand href="/">🌎</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/countries">Countries</Nav.Link>
-            <Nav.Link href="/favorites">
-              Favorites
-              {favorites.length > 0 ? `(${favorites.length})` : ''}
-            </Nav.Link>
+            <LinkContainer to="/">
+              <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/countries">
+              <Nav.Link>Countries</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/favorites">
+              <Nav.Link>
+                Favorites
+                {favorites.length > 0 ? `(${favorites.length})` : ''}
+              </Nav.Link>
+            </LinkContainer>
           </Nav>
         </Container>
       </Navbar>

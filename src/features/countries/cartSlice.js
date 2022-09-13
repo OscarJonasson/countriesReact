@@ -16,5 +16,16 @@ export const cartSlice = createSlice({
   },
 });
 
+// export const initializeLocalStorage = () => {
+//   return async (dispatch) => {
+//     // dispatch(addFavorite());
+//     // localStorage.setItem('cartData', JSON.stringify(data));
+//     // const cartData = localStorage.getItem('cartData')
+//     //   ? localStorage.getItem('cartData')
+//     //   : localStorage.setItem([]);
+//     // localStorage.setItem('cartData', JSON.stringify(cartData));
+//   };
+// };
+
 export const { addFavorite, removeFavorite } = cartSlice.actions;
 export default cartSlice.reducer;
