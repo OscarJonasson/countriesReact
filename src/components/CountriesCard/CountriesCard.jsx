@@ -62,7 +62,7 @@ const CountriesCard = ({ country }) => {
 
         <Link
           className={classes.info__seeMore}
-          to={`${country?.name?.common}`.toLowerCase()}
+          to={`/countries/${country?.name?.common}`.toLowerCase()}
           state={country}
         >
           <Button variant="info">See More</Button>

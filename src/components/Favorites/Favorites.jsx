@@ -19,6 +19,7 @@ const Favorites = () => {
     <section className={classes.container}>
       <Search />
       <div className={classes.countries}>
+        {/* Could go inside countriescard */}
         {favorites
           .filter((country) => {
             if (searchTerm === '') {
