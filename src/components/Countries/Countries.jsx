@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { search } from '../../features/countries/countriesSlice';
 import Search from '../Search/Search';
+import { useEffect } from 'react';
 
 const Countries = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,10 @@ const Countries = () => {
   const isLoading = useSelector((state) => state.countries.isLoading);
   const searchTerm = useSelector((state) => state.countries.search);
   const countries = useSelector((state) => state.countries.countries);
+
+  useEffect(() => {
+    dispatch(search(''));
+  }, []);
 
   const backToTop = () => {
     window.scrollTo({
