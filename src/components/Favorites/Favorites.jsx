@@ -1,12 +1,19 @@
 import CountriesCard from '../CountriesCard/CountriesCard';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import classes from './Favorites.module.css';
 import Search from '../Search/Search';
+import { search } from '../../features/countries/countriesSlice';
+import { useEffect } from 'react';
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.cart);
   const searchTerm = useSelector((state) => state.countries.search);
-  console.log(favorites);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(search(''));
+  }, []);
 
   const backToTop = () => {
     window.scrollTo({
