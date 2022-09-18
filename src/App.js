@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Layout from './pages/Layout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Countries from './components/Countries/Countries';
@@ -8,20 +8,15 @@ import Favorites from './components/Favorites/Favorites';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { initializeCountries } from './features/countries/countriesSlice';
-import {
-  addFavorite,
-  initializeLocalStorage,
-} from './features/countries/cartSlice';
+import { initializeLocalStorage } from './features/countries/cartSlice';
 
 const App = () => {
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart);
 
-  console.log('cartData', cartData);
-
   useEffect(() => {
     dispatch(initializeLocalStorage(cartData));
-  }, [cartData]);
+  }, [dispatch, cartData]);
 
   useEffect(() => {
     dispatch(initializeCountries());
