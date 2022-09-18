@@ -15,13 +15,16 @@ import {
 
 const App = () => {
   const dispatch = useDispatch();
-  // const cartData = useSelector((state) => state.cart);
+  const cartData = useSelector((state) => state.cart);
 
-  // console.log(cartData);
+  console.log('cartData', cartData);
+
+  useEffect(() => {
+    dispatch(initializeLocalStorage(cartData));
+  }, [cartData]);
 
   useEffect(() => {
     dispatch(initializeCountries());
-    // dispatch(initializeLocalStorage(cartData));
   }, [dispatch]);
 
   return (
