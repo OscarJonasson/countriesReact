@@ -5,6 +5,7 @@ import Search from '../Search/Search';
 import { search } from '../../features/countries/countriesSlice';
 import { useEffect } from 'react';
 import { clearFavorites } from '../../features/countries/cartSlice';
+import Button from 'react-bootstrap/Button';
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.cart);
@@ -26,9 +27,13 @@ const Favorites = () => {
   return (
     <section className={classes.container}>
       <Search />
-      <button onClick={() => dispatch(clearFavorites())}>
+      <Button
+        className={`my-4 ${classes.danger}`}
+        variant="danger"
+        onClick={() => dispatch(clearFavorites())}
+      >
         Clear all favorites
-      </button>
+      </Button>
       <div className={classes.countries}>
         {/* Could go inside countriescard */}
         {favorites

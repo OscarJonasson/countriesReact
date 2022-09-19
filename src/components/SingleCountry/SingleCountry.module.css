@@ -38,3 +38,11 @@
 .weather {
   margin: 3rem 0;
 }
+
+.backLink {
+  color: azure;
+}
+
+.backLink:hover {
+  color: black;
+}
