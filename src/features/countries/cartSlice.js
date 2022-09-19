@@ -5,10 +5,6 @@ export const cartSlice = createSlice({
   initialState: JSON.parse(localStorage.getItem('cartData')) || [],
 
   reducers: {
-    // needs state even if not used?
-    clearFavorites: (state) => {
-      localStorage.setItem('cartData', JSON.stringify([]));
-    },
     addFavorite: (state, action) => {
       state.push(action.payload);
     },
@@ -20,7 +16,7 @@ export const cartSlice = createSlice({
   },
 });
 
-export const initializeLocalStorage = (data) => {
+export const updateLocalStorage = (data) => {
   return async () => {
     localStorage.setItem('cartData', JSON.stringify(data));
   };
@@ -33,6 +29,5 @@ export const clearFavorites = () => {
   };
 };
 
-export const { addFavorite, removeFavorite, updateLocalStorage } =
-  cartSlice.actions;
+export const { addFavorite, removeFavorite } = cartSlice.actions;
 export default cartSlice.reducer;

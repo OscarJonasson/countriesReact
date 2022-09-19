@@ -82,3 +82,10 @@ h3 {
 a {
   text-decoration: none;
 }
+
+.favBut {
+  background-color: transparent;
+  border: none;
+  height: 32px;
+  width: 32px;
+}
