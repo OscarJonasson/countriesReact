@@ -83,11 +83,35 @@ a {
   text-decoration: none;
 }
 
-.favBut {
+.favButAdd,
+.favButRem {
+  position: relative;
   background-color: transparent;
   border: none;
   height: 32px;
   width: 32px;
+}
+
+.favButAdd::after {
+  position: absolute;
+  content: 'Add to Favorites';
+  color: transparent;
+  transition: 200ms;
+  width: 7rem;
+  font-size: 0.8rem;
+}
+.favButRem::after {
+  position: absolute;
+  content: 'Remove from Favorites';
+  color: transparent;
+  transition: 200ms;
+  width: 9rem;
+  font-size: 0.8rem;
+}
+
+.favButAdd:hover::after,
+.favButRem:hover::after {
+  color: white;
 }
 
 .heart:hover {

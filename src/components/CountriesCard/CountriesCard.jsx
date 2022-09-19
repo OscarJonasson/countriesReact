@@ -33,7 +33,7 @@ const CountriesCard = ({ country }) => {
           .map((name) => name.name.common)
           .includes(country.name?.common) ? (
           <button
-            className={classes.favBut}
+            className={classes.favButRem}
             type="button"
             onClick={() => dispatch(removeFavorite(country))}
           >
@@ -53,7 +53,7 @@ const CountriesCard = ({ country }) => {
           </button>
         ) : (
           <button
-            className={classes.favBut}
+            className={classes.favButAdd}
             type="button"
             onClick={() => dispatch(addFavorite(country))}
           >
