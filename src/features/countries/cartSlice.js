@@ -5,8 +5,9 @@ export const cartSlice = createSlice({
   initialState: JSON.parse(localStorage.getItem('cartData')) || [],
 
   reducers: {
-    updateLocalStorage: (state, action) => {
-      localStorage.setItem('cartData', JSON.stringify(action.payload));
+    // needs state even if not used?
+    clearFavorites: (state) => {
+      localStorage.setItem('cartData', JSON.stringify([]));
     },
     addFavorite: (state, action) => {
       state.push(action.payload);
@@ -20,30 +21,15 @@ export const cartSlice = createSlice({
 });
 
 export const initializeLocalStorage = (data) => {
-  return async (dispatch) => {
-    // console.log(!localStorage.getItem('cartData'));
+  return async () => {
+    localStorage.setItem('cartData', JSON.stringify(data));
+  };
+};
 
-    // if (!localStorage.getItem('cartData')) {
-    //   const cartLocalStorage = (await localStorage.getItem('cartData'))
-    //     ? JSON.parse(localStorage.getItem('cartData'))
-    //     : [];
-    //   localStorage.setItem('cartData', JSON.stringify(cartLocalStorage));
-    // }
-    dispatch(updateLocalStorage(data));
-    // localStorage.setItem('cartData', JSON.stringify(cartLocalStorage));
-
-    // console.log('cartLocalS', cartLocalStorage);
-
-    // cartLocalStorage
-    //   ? dispatch(addFavorite(cartLocalStorage))
-    //   : dispatch(addFavorite(''));
-    // dispatch(addFavorite(cartLocalStorage));
-    // const favorites = await dispatch(addFavorite());
-    // localStorage.setItem('cartData', JSON.stringify(data));
-    // const cartData = localStorage.getItem('cartData')
-    //   ? localStorage.getItem('cartData')
-    //   : localStorage.setItem([]);
-    // localStorage.setItem('cartData', JSON.stringify(cartData));
+export const clearFavorites = () => {
+  return async () => {
+    localStorage.setItem('cartData', JSON.stringify([]));
+    window.location.reload();
   };
 };
 

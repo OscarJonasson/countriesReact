@@ -4,6 +4,7 @@ import classes from './Favorites.module.css';
 import Search from '../Search/Search';
 import { search } from '../../features/countries/countriesSlice';
 import { useEffect } from 'react';
+import { clearFavorites } from '../../features/countries/cartSlice';
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.cart);
@@ -25,6 +26,9 @@ const Favorites = () => {
   return (
     <section className={classes.container}>
       <Search />
+      <button onClick={() => dispatch(clearFavorites())}>
+        Clear all favorites
+      </button>
       <div className={classes.countries}>
         {/* Could go inside countriescard */}
         {favorites
