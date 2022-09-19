@@ -85,14 +85,16 @@ const CountriesCard = ({ country }) => {
         </div>
         <h3>Population</h3>
         <div className={classes.info}>{populationRounding()}</div>
-
-        <Link
-          className={classes.info__seeMore}
-          to={`/countries/${country?.name?.common}`.toLowerCase()}
-          state={country}
-        >
-          <Button variant="info">See More</Button>
-        </Link>
+        <div className={classes.info__seeMore}>
+          <Link
+            to={`/countries/${country?.name?.common}`.toLowerCase()}
+            state={country}
+          >
+            <Button className={classes.info__seeMore} variant="info">
+              See more
+            </Button>
+          </Link>
+        </div>
         {/* </Card.Text> */}
         <img
           className={classes.card__flag}
