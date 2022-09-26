@@ -3,6 +3,9 @@
 Countries app made in react.
 Using bootstrap and redux.
 
+<img width="817" alt="image" src="https://user-images.githubusercontent.com/98033579/192243167-0123b777-f314-4208-85ed-35f0a0541847.png">
+
+
 ## Description and Required content
 
 Create a website that is using restcountries and openweather API.
