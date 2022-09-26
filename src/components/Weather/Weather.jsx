@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './weather.module.css';
 
 const Weather = ({ weather, error }) => {
-  console.log(weather);
   return (
     <section className={classes.weather}>
       <h3>Current weather:</h3>
