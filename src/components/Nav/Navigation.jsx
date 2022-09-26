@@ -16,10 +16,10 @@ function Navigation() {
             <LinkContainer to="/">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/countries">
+            <LinkContainer to="countries">
               <Nav.Link>Countries</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/favorites">
+            <LinkContainer to="favorites">
               <Nav.Link>
                 Favorites
                 {favorites.length > 0 ? `(${favorites.length})` : ''}

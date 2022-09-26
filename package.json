@@ -1,7 +1,7 @@
 {
   "name": "countries",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "homepage": "https://oscarjonasson.github.io/countriesReact",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",

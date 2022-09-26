@@ -24,7 +24,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/countriesReact/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="countries" element={<Countries />} />
           <Route path="countries/:name" element={<SingleCountry />} />
