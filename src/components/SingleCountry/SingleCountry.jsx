@@ -8,6 +8,8 @@ import Weather from '../Weather/Weather';
 
 const SingleCountry = () => {
   const [weather, setWeather] = useState([]);
+  const [error, setError] = useState(false);
+
   const location = useLocation();
   const country = location.state;
   const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
@@ -21,7 +23,10 @@ const SingleCountry = () => {
       .get(
         `http://api.openweathermap.org/data/2.5/weather?q=${country.capital}&units=metric&APPID=${apiKey}`
       )
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        console.log(err);
+        setError(true);
+      })
       .then((res) => setWeather(res.data));
   }, []);
 
@@ -49,7 +54,7 @@ const SingleCountry = () => {
           ))}
         </ul>
         <div className={classes.weather}>
-          <Weather weather={weather} />
+          <Weather weather={weather} error={error} />
         </div>
         <Link className={classes.backLink} to="/countries">
           <svg
