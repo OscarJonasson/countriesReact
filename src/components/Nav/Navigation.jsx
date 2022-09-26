@@ -11,9 +11,9 @@ function Navigation() {
     <>
       <Navbar bg="dark" variant="dark" fixed="top">
         <Container>
-          <Navbar.Brand href="/">🌎</Navbar.Brand>
+          <Navbar.Brand href="/countriesReact">🌎</Navbar.Brand>
           <Nav className="me-auto">
-            <LinkContainer to="/">
+            <LinkContainer to="/countriesReact">
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
             <LinkContainer to="countries">
