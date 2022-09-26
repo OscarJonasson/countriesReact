@@ -8,17 +8,13 @@ import Favorites from './components/Favorites/Favorites';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { initializeCountries } from './features/countries/countriesSlice';
-import {
-  initFavorites,
-  updateLocalStorage,
-} from './features/countries/cartSlice';
+import { updateLocalStorage } from './features/countries/cartSlice';
 
 const App = () => {
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cart);
   useEffect(() => {
     dispatch(initializeCountries());
-    // dispatch(initFavorites());
   }, [dispatch]);
 
   useEffect(() => {

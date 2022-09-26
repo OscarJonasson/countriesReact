@@ -2,8 +2,6 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CountriesCard from '../CountriesCard/CountriesCard';
 import classes from './Countries.module.css';
-import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import { search } from '../../features/countries/countriesSlice';
 import Search from '../Search/Search';
 import { useEffect } from 'react';

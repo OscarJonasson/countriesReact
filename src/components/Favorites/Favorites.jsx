@@ -24,10 +24,6 @@ const Favorites = () => {
     });
   };
 
-  // useEffect(() => {
-  //   dispatch();
-  // });
-
   return (
     <section className={classes.container}>
       <Search />
@@ -39,7 +35,6 @@ const Favorites = () => {
         Clear all favorites
       </Button>
       <div className={classes.countries}>
-        {/* Could go inside countriescard */}
         {favorites
           .filter((country) => {
             if (searchTerm === '') {

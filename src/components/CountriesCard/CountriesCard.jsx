@@ -70,7 +70,6 @@ const CountriesCard = ({ country }) => {
           </button>
         )}
         <Card.Title>Languages:</Card.Title>
-        {/* <Card.Text> */}
         <h3>Languages:</h3>
         <div className={classes.info}>
           {Object.values(country?.languages || {}).map((language, i) => (
