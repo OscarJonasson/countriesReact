@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { initializeCountries } from './features/countries/countriesSlice';
 import { updateLocalStorage } from './features/countries/cartSlice';
+import { HashRouter } from 'react-router-dom';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,16 +23,16 @@ const App = () => {
   }, [dispatch, cartData]);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
-        <Route path="/countriesReact/" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="countries" element={<Countries />} />
           <Route path="countries/:name" element={<SingleCountry />} />
           <Route path="favorites" element={<Favorites />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

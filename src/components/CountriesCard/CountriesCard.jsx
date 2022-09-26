@@ -86,7 +86,7 @@ const CountriesCard = ({ country }) => {
         <div className={classes.info}>{populationRounding()}</div>
         <div className={classes.info__seeMore}>
           <Link
-            to={`countriesReact/countries/${country?.name?.common}`.toLowerCase()}
+            to={`/countries/${country?.name?.common}`.toLowerCase()}
             state={country}
           >
             <Button className={classes.info__seeMore} variant="info">
@@ -94,7 +94,6 @@ const CountriesCard = ({ country }) => {
             </Button>
           </Link>
         </div>
-        {/* </Card.Text> */}
         <img
           className={classes.card__flag}
           src={country?.flags?.svg}
