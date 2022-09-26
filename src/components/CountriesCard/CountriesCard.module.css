@@ -93,14 +93,18 @@ a {
 }
 
 .favButAdd::after {
+  text-align: left;
   position: absolute;
   content: 'Add to Favorites';
   color: transparent;
   transition: 200ms;
-  width: 7rem;
+  width: 9rem;
+  margin-left: 0.4rem;
   font-size: 0.8rem;
 }
 .favButRem::after {
+  margin-left: 0.4rem;
+  text-align: left;
   position: absolute;
   content: 'Remove from Favorites';
   color: transparent;

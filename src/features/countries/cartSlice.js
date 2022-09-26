@@ -5,6 +5,9 @@ export const cartSlice = createSlice({
   initialState: JSON.parse(localStorage.getItem('cartData')) || [],
 
   reducers: {
+    // initFavorites: (state, action) => {
+    //   state = action.payload;
+    // },
     addFavorite: (state, action) => {
       state.push(action.payload);
     },
@@ -29,5 +32,13 @@ export const clearFavorites = () => {
   };
 };
 
-export const { addFavorite, removeFavorite } = cartSlice.actions;
+// this is the "right" solution
+// export const initializeLocalStorage = () => {
+//   return async (dispatch) => {
+//     const data = JSON.parse(localStorage.getItem('cartData')) || [];
+//     dispatch(initFavorites(data));
+//   };
+// };
+
+export const { addFavorite, removeFavorite, initFavorites } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -24,6 +24,10 @@ const Favorites = () => {
     });
   };
 
+  // useEffect(() => {
+  //   dispatch();
+  // });
+
   return (
     <section className={classes.container}>
       <Search />
