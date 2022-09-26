@@ -19,7 +19,7 @@ const SingleCountry = () => {
     });
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${country.name.common}&units=metric&APPID=${apiKey}`
+        `http://api.openweathermap.org/data/2.5/weather?q=${country.capital}&units=metric&APPID=${apiKey}`
       )
       .catch((err) => console.log(err))
       .then((res) => setWeather(res.data));

@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './weather.module.css';
 
 const Weather = ({ weather }) => {
-  return (
+  return (weather = (
     <section className={classes.weather}>
       <h3>Current weather:</h3>
 
@@ -24,7 +24,7 @@ const Weather = ({ weather }) => {
         </li>
       </ul>
     </section>
-  );
+  ));
 };
 
 export default Weather;
