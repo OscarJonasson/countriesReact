@@ -9,7 +9,7 @@ const Weather = ({ weather, error }) => {
         <ul>
           <li className={classes.weather__desc}>
             <img
-              src={`http://openweathermap.org/img/wn/${weather?.weather?.map(
+              src={`https://openweathermap.org/img/wn/${weather?.weather?.map(
                 (icon) => icon.icon
               )}@2x.png`}
               alt={weather.weather?.map((desc) => desc.description)}

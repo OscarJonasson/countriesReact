@@ -21,7 +21,7 @@ const SingleCountry = () => {
     });
     axios
       .get(
-        `http://api.openweathermap.org/data/2.5/weather?q=${country.capital}&units=metric&APPID=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&units=metric&APPID=${apiKey}`
       )
       .catch((err) => {
         console.log(err);

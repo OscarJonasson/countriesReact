@@ -13,7 +13,7 @@ const Home = () => {
       <Link className={classes.countriesLink} to="countries">
         Check out
       </Link>
-      <CarouselHome countries={countries} />
+      {/* <CarouselHome countries={countries} /> */}
     </section>
   );
 };
