@@ -6,5 +6,3 @@ jobs:
       - name: Retrieve secret
         env:
           super_secret: ${{ secrets.REACT_APP_WEATHER_API_KEY }}
-        run: |
-          example-command "$super_secret"
