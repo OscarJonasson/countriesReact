@@ -33,9 +33,16 @@ clone repository
 ```sh
 npm install
 ```
+(All of this should be in the backend, to hide the key)
 To make openweather work locally, you will need an API key for it.
 Sign Up here:
 https://home.openweathermap.org/users/sign_up
+
+create an .env to root of the project where you can paste your API key like this:
+
+```txt
+REACT_APP_WEATHER_API_KEY = YourApiKey
+```
 
 
 ```sh
