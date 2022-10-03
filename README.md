@@ -33,7 +33,7 @@ clone repository
 ```sh
 npm install
 ```
-To make openweather work you will need an API key for it.
+To make openweather work locally, you will need an API key for it.
 Sign Up here:
 https://home.openweathermap.org/users/sign_up
 
