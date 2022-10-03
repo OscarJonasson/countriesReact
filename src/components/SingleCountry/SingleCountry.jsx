@@ -48,7 +48,6 @@ const SingleCountry = () => {
             <span key={i}>{(i ? ', ' : '') + language}</span>
           ))}{' '}
         </p>
-        <p></p>
         <ul className={classes.card__tz}>
           Timezones:
           {country.timezones.map((tz, i) => (
