@@ -29,7 +29,6 @@ const SingleCountry = () => {
       })
       .then((res) => setWeather(res.data));
   }, []);
-  console.log(country);
 
   return (
     <div className={classes.container}>
