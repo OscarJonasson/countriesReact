@@ -29,6 +29,7 @@ const SingleCountry = () => {
       })
       .then((res) => setWeather(res.data));
   }, []);
+  console.log(country);
 
   return (
     <div className={classes.container}>
@@ -47,6 +48,7 @@ const SingleCountry = () => {
             <span key={i}>{(i ? ', ' : '') + language}</span>
           ))}{' '}
         </p>
+        <p></p>
         <ul className={classes.card__tz}>
           Timezones:
           {country.timezones.map((tz, i) => (
